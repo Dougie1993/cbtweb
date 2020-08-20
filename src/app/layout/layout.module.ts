@@ -11,6 +11,7 @@ import { LayoutComponent } from './layout.component';
 import { RouterModule } from '@angular/router';
 import { LayoutRoutingModule } from './layout-routing.module';
 
+
 @NgModule({
     declarations: [
         LayoutComponent,
