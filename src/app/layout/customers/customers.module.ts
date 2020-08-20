@@ -11,8 +11,8 @@ import { FormsModule} from '@angular/forms';
     imports: [
         CommonModule,
         CustomersRoutingModule,
-        NgbAlertModule.forRoot(),
-        NgbModule.forRoot(),
+        NgbAlertModule,
+        NgbModule,
         FormsModule
     ],
     declarations: [

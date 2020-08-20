@@ -1,1 +1,127 @@
-<p>tasks works!</p>
+<div [@routerTransition]>
+    <div class="card mb-3">
+        <div class="card-header">
+            <h3>To-do List</h3>
+        </div>
+         <div class="card-body table-responsive">
+            <div class="btn-toolbar">
+                <!-- <input type="button" value="Click Me" style="float: left;"> -->
+                <button 
+                class="btn-success" 
+                style="float: right;" 
+                (click)="open(content)">
+                Add Task
+            </button>
+            </div>
+            <table class="table table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Title</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let task of tasks">
+                    <tr *ngIf="task.status === 'Pending'">
+                        <td >
+                            <input 
+                            type="checkbox" 
+                            class="checkbox-inline" 
+                            name="checked"
+                            [checked]="task.checked"
+                            (click) = "onCheck(task)">
+                        </td>
+                        <td>{{ task.title }}</td>
+                        <td>{{ task.status }}</td>
+                        <td class="btn-toolbar">
+                            <button class="btn btn-primary" (click)="openNewDialog(content, task)">Edit</button>
+                            <button class="btn btn-danger" (click)="onCancel(task)">X</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>       
+        <div class="card-header">
+            <h4>Completed</h4>
+        </div>
+        <div class="card-body table-responsive">
+            <table class="table table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let task of tasks">
+                    <tr *ngIf="task.status === 'Complete'">
+                        <td>{{ task.title }}</td>
+                        <td>{{ task.status }}</td>
+                        <td class="btn-group">
+                            <button class="btn btn-danger" (click)="onDelete(task)">X</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="card-header">
+            <h4>Cancelled</h4>
+        </div>
+        <div class="card-body table-responsive">
+            <table class="table table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let task of tasks">
+                    <tr *ngIf="task.status === 'Cancelled'">
+                        <td>{{ task.title }}</td>
+                        <td>{{ task.status }}</td>
+                        <td class="btn-group">
+                            <button class="btn btn-danger" (click)="onDelete(task)">X</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!--Task Modal-->
+<div class="card-body">
+    <ng-template #content let-c="close" let-d="dismiss">
+        <div class="modal-header">
+            <h4 class="modal-title">{{ editMode? "Edit Task" : "New Task"}}</h4>
+            <button type="button" class="close" aria-label="Close" (click)="close()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <br>
+        </div>   
+        <div class="modal-body">
+            <form role="form" (ngSubmit)="onUpdateTask(frm)" #frm="ngForm">
+                <div class="form-group">
+                    <label for="name">Name<span style="color: #FF0000;">*</span></label>
+                    <input 
+                    class="form-control" 
+                    id="title" 
+                    name="title" 
+                    type="text" 
+                    [(ngModel)]="task.title"
+                    #name="ngModel" 
+                    required 
+                    maxlength="25" 
+                    placeholder="eg 'Deploy App'">
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="frm.invalid">
+                    {{ editMode? "Update" : "Add"}}
+                </button>
+                &nbsp;&nbsp;
+                <button type="button" class="btn btn-danger" (click)="c('Close click')">Close</button>
+            </form>
+        </div>
+    </ng-template>
+</div>
