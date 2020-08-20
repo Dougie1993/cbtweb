@@ -1,0 +1,32 @@
+$topnav-background-color: #004981;
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+  background-color: #004981;
+}
+
+.sidenav .mat-toolbar {
+  background: #004981;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.mat-toolbar {
+  color: white;
+  background: #004981;
+
+}
+.mat-list-item {
+  color: white;
+}
+.active {
+  background: darken($topnav-background-color, 5%);
+  color:gold;
+}

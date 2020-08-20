@@ -1,0 +1,33 @@
+.main-container {
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 10px;
+    -ms-overflow-x: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  @media screen and (max-width: 992px) {
+    .main-container {
+      margin-left: 0px !important;
+    }
+  }
+  
+  @media print {
+    .main-container {
+      margin-top: 0px !important;
+      margin-left: 0px !important;
+    }
+  }
+  
+  
+  @media screen and (min-width: 992px) {
+    .modal-dialog.modal-lg {
+      max-width: 820px !important;
+    }
+  }
+ 
+
+  
