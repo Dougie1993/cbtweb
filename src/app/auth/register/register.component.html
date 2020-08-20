@@ -1,0 +1,64 @@
+<div class="login-page" [@routerTransition]>
+    <ngx-alerts></ngx-alerts>
+    <div class="row justify-content-md-center">
+        <div class="col-md-8">
+            <img class="user-avatar" src="assets/images/avatar.jpg" width="150px" />
+            <h1>Register</h1>
+            <form role="form" (ngSubmit)="onRegister()" #f="ngForm">
+                <div class="form-content">
+                    <div class="form-group">
+                        <input type="text" 
+                        class="form-control input-underline input-lg" 
+                        ngModel 
+                        id="firstName" 
+                        placeholder="First Name" 
+                        name="firstName"
+                        required>
+                    </div>
+                    <div class="form-group">
+                    <input type="text" 
+                    class="form-control input-underline input-lg" 
+                    ngModel 
+                    id="lastName" 
+                    placeholder="Last Name" 
+                    name="lastName"
+                    required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" 
+                        class="form-control input-underline input-lg" 
+                        ngModel  
+                        id="email" 
+                        placeholder="Email"  
+                        name="email"
+                        email
+                        required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" 
+                        class="form-control input-underline input-lg" 
+                        ngModel 
+                        id="password" 
+                        placeholder="Password" 
+                        name="password"
+                        required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" 
+                        class="form-control input-underline input-lg" 
+                        ngModel 
+                        id="confPassword" 
+                        placeholder="Confirm Password" 
+                        name="confPassword"
+                        required>
+                     </div>
+                </div>
+                <button class="btn rounded-btn" type="submit"> Register </button>
+                &nbsp;
+                <button class="btn rounded-btn" type="button" [routerLink]="['/login']"> Cancel </button>
+  
+            </form>
+        </div>
+    </div>
+  </div>
+  

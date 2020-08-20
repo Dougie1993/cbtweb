@@ -1,0 +1,17 @@
+{
+    "general_success": "Process completed successfully",
+    "general_error": "Something went wrong with the operation, please try again later",
+
+    "err_enter_firstname" : "Please enter your firstname before proceeding",
+    "err_enter_lastname" : "Please enter your lastname before proceeding",
+    "err_enter_email" : "Please enter your email before proceeding",
+    "err_enter_password" : "Please enter a password before proceeding",
+    "err_confirm_password" : "Please confirm your password before proceeding",
+    "err_password_mismatch" : "Passwords entered do not match",
+    "login_success": "You have successfully logged in",
+    "login_error": "Please ensure that both email address and password are correct",
+    "register_success": "You have successfully Registered",
+    "register_error": "Please ensure that details entered are correct",
+
+    "err_server": "Server connection error"
+}
