@@ -1,6 +1,13 @@
 # Cbtweb
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.22.
+This project was generated with [Angular CLI] version 8.3.22,
+Nodejs,
+MongoDB 
+
+## What I Learnt 
+- Consuming Restful API
+- CRUD Operations
+- Connecting to nonSQL Database
 
 ## Development server
 
